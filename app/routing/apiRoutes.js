@@ -6,12 +6,6 @@ var path = require("path");
 var router = express.Router();
 var friendsList = require('../data/friends.js');
 
-// middleware specific to this router
-router.use(function timeLog(req, res, next) {
-    console.log('Time: ', Date.now());
-    next();
-});
-
 router.post('/data/friends', function(req, res) {
     let newSurvey = req.body;
     let pickedFriend;
